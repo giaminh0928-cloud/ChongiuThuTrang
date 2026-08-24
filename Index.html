@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WebTrang Dành Riêng Cho Em Yêu Đó💗</title>
+    <style>
+      
+      body {
+  transition: background-color 1.5s ease;
+}
+.hidden-screen {
+  display: none !important;
+}
+
+.screen-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.cake-img {
+  max-width: 85%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.custom-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ff4d6d;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  cursor: pointer;
+}
+
+.custom-text {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 85%;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.heart-item {
+  position: absolute;
+  bottom: -10vh;
+  color: #ff4d6d;
+  font-size: 24px;
+  user-select: none;
+  z-index: 2;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #ffb6c1; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .heart-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .heart { position: absolute; display: block; font-size: 22px; opacity: 0.4; animation: floatHeart 12s linear infinite; }
+        .heart:nth-child(1) { left: 8%; animation-duration: 9s; }
+        .heart:nth-child(2) { left: 22%; animation-duration: 13s; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 38%; animation-duration: 11s; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 52%; animation-duration: 10s; animation-delay: 1s; }
+        .heart:nth-child(5) { left: 68%; animation-duration: 14s; animation-delay: 3s; }
+        .heart:nth-child(6) { left: 82%; animation-duration: 12s; animation-delay: 5s; }
+        
+        @keyframes floatHeart {
+            0% { transform: translateY(105vh) rotate(0deg) scale(0.6); opacity: 0; }
+            50% { transform: translateY(50vh) rotate(180deg) scale(1.1); opacity: 0.35; }
+            100% { transform: translateY(-10vh) rotate(360deg) scale(1.3); opacity: 0; }
+        }
+
+        #heart-storm {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 99; display: none; overflow: hidden;
+        }
+        .storm-heart { position: absolute; bottom: -50px; animation: stormFloat linear infinite; }
+        @keyframes stormFloat {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-115vh) scale(1.3); opacity: 0; }
+        }
+
+        .container { 
+            width: 90%; max-width: 420px; position: relative; z-index: 2; margin: 0 auto; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .btn { 
+            background-color: #fff; color: #d63384; border: none; padding: 12px 25px; 
+            font-weight: bold; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            width: 100%; margin-top: 15px; font-size: 16px; transition: transform 0.2s, background 0.3s; 
+        }
+        .btn:active { transform: scale(0.95); }
+
+        .btn-wrapper { position: relative; width: 100%; }
+
+        #like-pointer {
+            display: none; position: absolute; top: 50%; left: -35px;
+            width: 35px; height: auto; z-index: 10; pointer-events: none;
+            animation: pushPointerRight 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes pushPointerRight {
+            0% { transform: translateY(-50%) rotate(90deg) translateX(0); }
+            100% { transform: translateY(-50%) rotate(90deg) translateX(15px); }
+        }
+
+        #angry-container { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin-top: 15px; min-height: 160px; }
+        .angry-wrapper { display: flex; flex-direction: column; align-items: center; }
+        .angry-img { width: 100px; height: auto; transition: transform 0.4s ease; }
+        .angry-text { color: #d63384; font-size: 14px; font-weight: bold; margin-top: 5px; }
+        .name-label { color: #d63384; font-size: 11px; font-weight: bold; margin-bottom: 4px; background: rgba(255,255,255,0.8); padding: 2px 6px; border-radius: 8px; }
+
+        .super-shake-gif {
+            position: fixed !important; top: 50% !important; left: 50% !important;
+            width: 120vw !important; max-width: none !important; height: auto !important;
+            z-index: 9999; animation: superShake 0.08s infinite alternate ease-in-out;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        @keyframes superShake {
+            0% { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); }
+            25% { transform: translate(-48%, -52%) scale(1.25) rotate(-5deg); }
+            50% { transform: translate(-52%, -48%) scale(1.22) rotate(5deg); }
+            75% { transform: translate(-49%, -51%) scale(1.27) rotate(-3deg); }
+            100% { transform: translate(-51%, -49%) scale(1.2) rotate(3deg); }
+        }
+
+        #white-flash {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #ffffff; z-index: 10000; opacity: 0; pointer-events: none;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        #black-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #000000; z-index: 30000; opacity: 0; pointer-events: none;
+            transition: opacity 2.5s ease-in-out;
+        }
+
+        #birthday-screen {
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10001; overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute; top: -5%; left: -5%; width: 110%; height: 110%;
+            object-fit: cover; z-index: -1; filter: blur(8px) brightness(0.85); transform: scale(1.05);
+        }
+
+        .birthday-content {
+            position: relative; z-index: 2; background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(5px); padding: 25px 20px; border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); width: 85%; max-width: 380px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        .btn-voice {
+            background-color: #ff4081; color: #fff; border: none; padding: 10px 20px;
+            border-radius: 25px; font-size: 15px; font-weight: bold; margin-top: 15px;
+            cursor: pointer; box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4); transition: transform 0.2s;
+        }
+
+        #jumpscare-img {
+            display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            object-fit: cover; z-index: 20000; transition: opacity 0.8s ease; opacity: 1;
+        }
+
+        .text-announce { color: #d63384; font-size: 20px; font-weight: bold; line-height: 1.5; }
+
+        .quiz-box {
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(5px);
+            padding: 20px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            width: 100%; margin: 0 auto;
+        }
+        .quiz-title { color: #d63384; font-size: 18px; font-weight: bold; margin-bottom: 15px; line-height: 1.4; }
+        .answer-btn { display: flex; align-items: center; justify-content: space-between; }
+        .answer-btn img { width: 24px; height: 24px; object-fit: contain; display: none; margin-left: 10px; }
+
+        /* TIMELINE STYLES */
+        #timeline-screen {
+            display: none; flex-direction: column; align-items: center;
+            width: 100vw; height: 100vh; position: fixed; top: 0; left: 0;
+            background: rgba(255, 182, 193, 0.95); z-index: 10005; padding: 20px 10px;
+            overflow: hidden; justify-content: center;
+        }
+
+        .timeline-title { color: #d63384; font-size: 22px; font-weight: bold; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+
+        .timeline-container {
+            width: 100%; max-width: 900px; display: flex; align-items: center;
+            overflow-x: auto; scroll-behavior: smooth; padding: 40px 20px;
+            position: relative; -webkit-overflow-scrolling: touch;
+        }
+        .timeline-container::-webkit-scrollbar { height: 6px; }
+        .timeline-container::-webkit-scrollbar-thumb { background: #d63384; border-radius: 10px; }
+
+        .timeline-line {
+            position: absolute; top: 50%; left: 0; width: 3500px; height: 4px;
+            background: #d63384; z-index: 1; transform: translateY(-50%);
+        }
+
+        .timeline-item { flex: 0 0 280px; margin: 0 20px; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+        .timeline-dot { width: 20px; height: 20px; background: #fff; border: 4px solid #d63384; border-radius: 50%; margin: 15px 0; box-shadow: 0 0 8px rgba(0,0,0,0.2); }
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px);
+            border-radius: 15px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .timeline-text { color: #333; font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+        .timeline-date { color: #d63384; font-size: 13px; font-weight: bold; }
+
+        .nav-btn-group { display: flex; gap: 15px; margin-top: 15px; }
+        .nav-btn { background: #d63384; color: #fff; border: none; padding: 8px 18px; border-radius: 15px; font-size: 14px; font-weight: bold; cursor: pointer; }
+
+        /* HIỆU ỨNG HỘP QUÀ & PHÁO HOA */
+        .gift-box-anim {
+            width: 120px; height: 120px; background: #ff4081; border-radius: 15px; position: relative;
+            margin: 20px auto; cursor: pointer; animation: giftShake 1.2s infinite ease-in-out;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .gift-box-anim::before { content: ''; position: absolute; top: 0; left: 50%; width: 20px; height: 100%; background: #ffd700; transform: translateX(-50%); }
+        .gift-box-anim::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 20px; background: #ffd700; transform: translateY(-50%); }
+        
+        @keyframes giftShake {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-8deg) scale(1.05); }
+            40% { transform: rotate(8deg) scale(1.05); }
+            60% { transform: rotate(-5deg) scale(1.05); }
+            80% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        #fireworks-canvas {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 10020; display: none;
+        }
+      /* Thêm đoạn này vào bên trong thẻ <style>
+      /* Đổi nền toàn bộ trang sang màu hồng */
+body {
+  background-color: #ffb6c1 !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Định dạng ảnh bk.png nằm chính giữa */
+.center-img {
+  max-width: 85%;
+  max-height: 70vh;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Định dạng trái tim bay */
+.heart {
+  position: absolute;
+  bottom: -10vh;
+  color: #ff4d6d;
+  font-size: 24px;
+  user-select: none;
+  z-index: 1;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.3) rotate(360deg); opacity: 0; }
+}
+      /* Tùy chỉnh hiệu ứng chuyển màu nền mượt mà */
+body {
+  transition: background-color 1.5s ease;
+}
+
+/* Ẩn các màn hình khi chưa tới lượt */
+.hidden-screen {
+  display: none !important;
+}
+
+/* Định dạng các màn hình hiển thị */
+.screen-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Bánh kem bk.png ở chính giữa */
+.cake-img {
+  max-width: 80%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Kiểu dáng cho các nút bấm */
+.custom-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ff4d6d;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  cursor: pointer;
+}
+
+/* Kiểu dáng chữ thông điệp */
+.custom-text {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 85%;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Trái tim bay hiệu ứng nền */
+.heart-item {
+  position: absolute;
+  bottom: -10vh;
+  color: #ff4d6d;
+  font-size: 24px;
+  user-select: none;
+  z-index: 2;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+    </style>
+</head>
+<body>
+<!-- Nhạc nền sinh nhật (tự động phát sau voice) -->
+<audio id="snvv-music" src="snvv.mp3" loop></audio>
+
+<!-- Màn hình bánh kem bk.png + nút bấm 1 -->
+<div id="screen-cake" class="screen-wrapper hidden-screen">
+  <img src="bk.png" alt="Bánh kem" class="cake-img">
+  <button id="btn-step1" class="custom-btn">Bấm vào đây nè ❤️</button>
+</div>
+
+<!-- Màn hình thông điệp deadline + nút bấm 2 -->
+<div id="screen-msg1" class="screen-wrapper hidden-screen">
+  <p class="custom-text">Saoooo em thấy thành quả chạy deadline sống chết của anh thế nàoo</p>
+  <button id="btn-step2" class="custom-btn">Tiếp tục ✨</button>
+</div>
+
+<!-- Màn hình lời chúc cuối cùng -->
+<div id="screen-msg2" class="screen-wrapper hidden-screen">
+  <p class="custom-text">Anh sẽ vẫn đồng hành và yêu thương em càng ngày càng nhiều hơn tóm lại chúc em sinh nhật thật ô mai gót và thật duiii nhaa thế giới của anh</p>
+</div>
+
+    <div id="white-flash"></div>
+    <div id="black-overlay"></div>
+    <div id="heart-storm"></div>
+    <canvas id="fireworks-canvas"></canvas>
+    <img id="jumpscare-img" src="hu.jpg" alt="Jumpscare">
+
+    <!-- AUDIO ELEMENTS -->
+    <audio id="bg-music" src="nen.mp3" loop></audio>
+    <audio id="voice-hello" src="hello.mp3"></audio>
+    <audio id="click-sound" src="nut.mp3"></audio>
+    <audio id="jumpscare-sound" src="us.mp3"></audio>
+    <audio id="khok-sound" src="khok.mp3"></audio>
+    <audio id="birthday-music" src="sn.mp3"></audio>
+    <audio id="voice-hpbd" src="csn.mp3"></audio>
+    <audio id="timeline-music" src="luv.mp3" loop></audio>
+    <audio id="voice-gift" src="snvvn.mp3"></audio>
+    <audio id="snvv-music" src="snvv.mp3" loop></audio>
+
+    <div class="heart-background">
+        <span class="heart">💗</span><span class="heart">💖</span><span class="heart">💗</span>
+        <span class="heart">💕</span><span class="heart">💗</span><span class="heart">💖</span>
+    </div>
+
+    <div class="container" id="main-content">
+        <!-- Bước 1: Màn hình chào -->
+        <div id="welcome-screen">
+            <img src="hello.gif" style="width: 200px; height: auto;" alt="Welcome GIF">
+            <p style="color: #d63384; font-weight: bold; font-size: 20px; margin-top: 10px;">Okk bbaii em nhaa bấm vào con mèo đii😽</p>
+        </div>
+
+        <!-- Bước 2: Lời nhắn -->
+        <div id="text-screen" style="display: none;">
+            <p style="color: #d63384; font-size: 20px; font-weight: bold;">Gặp gỡ được em người con gái đáng iu cutee anh thương nhấtttt khiến anh ko khỏi muốn dành những điều tốt đẹp nhất cho em và sau đây là tất cả những gì anh đã dồn cả tâm sức thời gian và trái tim dành tặng cho em yêu đóo</p>
+        </div>
+        
+        <!-- Bước 3: Menu chọn -->
+        <div id="menu-screen" style="display: none; flex-direction: column; align-items: center; width: 100%;">
+            <h2 style="color: #d63384; margin-bottom: 10px;">Em chọn cái j cũng có bất ngờ cảaa</h2>
+            
+            <div class="btn-wrapper">
+                <img id="like-pointer" src="like.png" alt="Pointer">
+                <button class="btn" onclick="nextAction()">Xem vội(Tiết mục chính)</button>
+            </div>
+            
+            <button class="btn" onclick="handleExit()">Thoát vội(Thách dám thoát vội👽)</button>
+            <div id="angry-container"></div>
+        </div>
+
+        <!-- BƯỚC CHUYỂN DẪN CÂU HỎI -->
+        <div id="quiz-intro-screen" style="display: none; flex-direction: column; align-items: center; width: 100%;">
+            <p id="quiz-intro-text" class="text-announce"></p>
+            <button id="start-btn" class="btn" style="display: none; margin-top: 25px;" onclick="startQuiz()">Sì tát (Khum biết ghi start)</button>
+            <button id="msg-next-btn" class="btn" style="display: none; margin-top: 25px;" onclick="advanceQuizIntroSequence()">Go go lét go</button>
+        </div>
+
+        <!-- MÀN HÌNH CHƠI QUIZ -->
+        <div id="quiz-screen" style="display: none; width: 100%; justify-content: center;">
+            <div class="quiz-box" id="quiz-container"></div>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH CHÚC MỪNG SINH NHẬT -->
+    <div id="birthday-screen">
+        <video id="birthday-video" class="bg-video" src="cute.mp3" loop playsinline muted></video>
+        <div class="birthday-content">
+            <h1 style="color: #d63384; font-size: 24px;">Chúc mừng sinh nhật bé iu cục dàng cục tưng của anhh🎂💋</h1>
+            <img src="banhkem.gif" style="width: 180px; margin-top: 15px;" alt="Birthday Cake">
+            
+            <button class="btn-voice" onclick="playBirthdayVoice()">🔊 Chuẩn bị tinh thần 🥶</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH DÒNG THỜI GIAN KỶ NIỆM (TIMELINE) -->
+    <div id="timeline-screen">
+        <h2 class="timeline-title">2 năm qua tui và ẻm có gì đâyy</h2>
+        <div class="timeline-container" id="timelineScroll">
+            <div class="timeline-line"></div>
+        </div>
+        <div class="nav-btn-group">
+            <button class="nav-btn" onclick="scrollTimeline(-280)">⬅ TRƯỚC</button>
+            <button class="nav-btn" onclick="scrollTimeline(280)">SAU ➡</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH TỔNG KẾT THỐNG KÊ -->
+    <div id="summary-screen" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); z-index: 10010; padding: 20px; overflow-y: auto;">
+        <div style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); padding: 25px 20px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); width: 100%; max-width: 420px; text-align: center;">
+            <h2 style="color: #d63384; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-transform: uppercase;">📊 Báo Cáo Tình Yêu 📊</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; text-align: left;">
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">❤️ Yêu nhau: <span style="color: #333;">553 ngày</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🗓️ Bên nhau: <span style="color: #333;">Tròn 79 tuần</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">⏳ Cạnh nhau: <span style="color: #333;">18 tháng 7 ngày</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">⏰ Thời gian: <span style="color: #333;">13.272 giờ</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🔥 Chuỗi: <span style="color: #333;">385</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🏷️ Đổi tên đôi: <span style="color: #333;">3 lần</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🖼️ Đổi avt đôi: <span style="color: #333;">23 lần</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">💬 Messenger: <span style="color: #333;">>500.000 tin</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">📱 TikTok: <span style="color: #333;">>15.000 tin</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🎮 Skin đôi: <span style="color: #333;">7 skin</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">🤝 Tri kỷ: <span style="color: #333;">547 ngày</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081;">⚔️ Kề vai sát cánh: <span style="color: #333;">1246 trận</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081; grid-column: span 2;">🌙 Chúc ngủ ngoan & Yêu: <span style="color: #333;">>600 lần</span></div>
+                <div style="background: #fff0f5; padding: 10px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; color: #d63384; border-left: 4px solid #ff4081; grid-column: span 2;">📸 Ảnh của em anh lưu: <span style="color: #333;">197 ảnh</span></div>
+            </div>
+
+            <div style="margin-top: 25px; padding-top: 15px; border-top: 2px dashed #ffb6c1; color: #d63384; font-size: 17px; font-weight: 800; line-height: 1.5;">
+                Anh rất yêu Phạm Thu Trang của anh ❤️ Chúc em bé sinh nhật thật cuồng nhiệt và càng xinh đẹp cute hơnnnnnn 🎉✨
+            </div>
+
+            <!-- Nút cuối hành trình -->
+            <button class="btn" style="background: #d63384; color: #fff; margin-top: 20px;" onclick="goToPostSummaryText()">cuối hành trình ➔</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH LỜI NHẮN CUỐI HÀNH TRÌNH -->
+    <div id="post-summary-screen" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: #ffb6c1; z-index: 10015; padding: 20px;">
+        <div style="background: rgba(255,255,255,0.9); padding: 25px 20px; border-radius: 20px; max-width: 400px; width: 100%; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+            <p class="text-announce" style="margin-bottom: 20px;">đã kết thúc 1 hành trình dài ròi hãy cùng anh tiếp tục hành trình thêm nhiều kỉ niệm nữa nhaa</p>
+            <button class="btn" style="background: #ff4081; color: #fff;" onclick="openGiftPhase()">em nhấn vào đii ✨</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH HỘP QUÀ / VIDEO / BÁNH KEM / PHÁO HOA -->
+    <div id="gift-stage-screen" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: #ffb6c1; z-index: 10018; padding: 20px;">
+        <div id="gift-stage-container" style="background: rgba(255,255,255,0.95); padding: 25px 20px; border-radius: 20px; max-width: 420px; width: 100%; box-shadow: 0 8px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center;">
+            
+            <!-- Trạng thái 1: Mở hộp quà -->
+            <div id="gift-opening-box">
+                <p style="color: #d63384; font-size: 18px; font-weight: bold;">Xé xác hộp quà để mở món quà bí mật nèee 🎁</p>
+                <div class="gift-box-anim" onclick="triggerOpenGift()"></div>
+            </div>
+
+            <!-- Trạng thái 2: Hiển thị Video phát kèm Voice -->
+            <div id="gift-video-box" style="display: none; width: 100%;">
+                <video id="gift-video" style="width: 100%; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);" src="snvvn.mp3" playsinline muted></video>
+                <p style="color: #d63384; font-size: 14px; font-weight: bold; margin-top: 10px;">🔊 Đang phát tin nhắn thoại của anh...</p>
+            </div>
+
+            <!-- Trạng thái 3: Hiển thị Bánh kem sau khi Voice phát xong -->
+            <div id="gift-cake-box" style="display: none; width: 100%; flex-direction: column; align-items: center;">
+                <h2 style="color: #d63384; font-size: 22px; font-weight: bold; margin-bottom: 15px;">Happy Birthday Em Yêu! 🎂🎉</h2>
+                <img src="banhkem.gif" style="width: 200px; height: auto;" alt="Bánh kem">
+                
+                <button id="deadline-btn" class="btn" style="background: #ff4081; color: #fff; margin-top: 25px;" onclick="goToDeadlineScreen()">Xem kết quả deadline anh chạy ➔</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH TỔNG KẾT KẾT THÚC VÀ TỐI SẦM -->
+    <div id="final-message-screen" style="display: none; flex-direction: column; align-items: center; justify-content: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: #ffb6c1; z-index: 10025; padding: 20px;">
+        <div id="final-card" style="background: rgba(255,255,255,0.95); padding: 30px 20px; border-radius: 20px; max-width: 400px; width: 100%; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+            <p id="final-card-text" class="text-announce"></p>
+            <button id="final-card-btn" class="btn" style="background: #d63384; color: #fff; display: none;" onclick="advanceFinalSequence()">Tiếp tục ✨</button>
+        </div>
+    </div>
+    <script>
+        const timelineData = [
+            { text: "Lần đầu gặp nhau với Elsu", date: "Ngày 15/2/2025" },
+            { text: "Chúng ta yêu nhau", date: "Ngày 16/2/2025" },
+            { text: "Lần đầu anh thấy thiên thần của anh", date: "Ngày 17/2/2025" },
+            { text: "Lần đầu tiên show mặt ắk wủy Fifai của anh 🙉00:00", date: "Ngày 18/2/2025" },
+            { text: "Lần đầu em hát cho anh nghe, em cất giọng hát anh rất thích nghe em hát", date: "Ngày 20/2/2025" },
+            { text: "Anh và em đã setlove", date: "Ngày 22/2/2025" },
+            { text: "Lần đầu để avt đôi", date: "Ngày 9/3/2025" },
+            { text: "Trend Tiktok đầu tiên em đã cho anh xem", date: "Ngày 7/4/2025" },
+            { text: "Anh biết anh đã yêu em cô gái đáng iu nhất trần đời", date: "Ngày 24/4/2025" },
+            { text: "Anh đã chỉnh sửa bức ảnh của em lần đầu vì quá đáng iu", date: "Ngày 25/4/2025" },
+            { text: "Chúng ta để tên đôi lần đầu là Fieren và Himmel lần đầu", date: "Ngày 3/5/2025" },
+            { text: "Lần đầu tiên em voice và nói yêu anh, lúc đó anh rất cảm động", date: "Ngày 28/5/2025" },
+            { text: "Ngày đầu kết bạn với acc Tiktok của Thu Trang nèe", date: "Ngày 29/5/2025" },
+            { text: "Lần đầu tiên anh muốn làm gì đó trên web cho em bằng cách gửi những lời yêu thương", date: "Ngày 1/6/2025" },
+            { text: "Lần đầu tiên những bức ảnh em chụp có thể khiến anh xao xuyến đến thao thức", date: "Ngày 2/6/2025" },
+            { text: "Lần đầu chơi skin cặp Điêu Thuyền LuBu", date: "Ngày 3/6/2025" },
+            { text: "Anh và em đặt tên của nhau ở Tiktok", date: "Ngày 4/6/2025" },
+            { text: "Anh cùng em bắt đầu giữ chuỗi tuy hơi gian nan", date: "Ngày 5/7/2025" },
+            { text: "Lần đầu tiên anh và em thật sự mở mic nói chuyện với nhau", date: "Ngày 6/7/2025" },
+            { text: "Chơi Roblox cùng nhau", date: "Ngày 15/7/2025" },
+            { text: "Bức ảnh đầu tiên anh muốn em thực hiện yêu cầu của anh là tạo biểu cảm hình trái tim và thêm chữ GM", date: "Ngày 21/7/2025" },
+            { text: "Đu trend Liên Quân lần đầu cùng cục dàng Nakroth Bach Diện", date: "Ngày 26/7/2025" },
+            { text: "Cùng ngày là lần đầu tiên em đăng video về anh lên Tiktok", date: "Ngày 26/7/2025" },
+            { text: "Lần thứ 2 anh chỉnh sửa ảnh của em và rất hãnh diện", date: "Ngày 28/7/2025" },
+            { text: "Lần thứ 2 đổi tên đôi và đây là cái tên anh thích nhất aiuThuTrang và beiuGiaMinh", date: "Ngày 15/8/2025" },
+            { text: "Đón sinh nhật em lần đầu nhưng anh còn rất tiếc nuối", date: "Ngày 24/8/2025" },
+            { text: "Lần đầu anh với em bắt đầu chơi Xingtu tuy thời gian chơi ngắn nhưng rất vui và em cũng rất đẹp đó", date: "Ngày 28/8/2025" },
+            { text: "Em thật sự đã tin tưởng anh và cho mật khẩu Facebook em", date: "Ngày 30/8/2025" },
+            { text: "Món quà đầu tiên anh tặng em là móc khoá Hello Kitty", date: "Ngày 7/10/2025" },
+            { text: "Em bắt đầu sử dụng và tạo sticker cho anh lần đầu", date: "Ngày 19/11/2025" },
+            { text: "Lần đầu đi chơi về khuya và đã bị tử hình", date: "Ngày 14/12/2025" },
+            { text: "Sinh nhật anh và anh đã có em, món quà vô giá của anh", date: "Ngày 16/12/2025" },
+            { text: "Cuối cùng anh đã biết được Zalo em ròii", date: "Ngày 23/12/2025" },
+            { text: "Anh đã có vợ anh vào ngày Giáng sinh", date: "Ngày 25/12/2025" },
+            { text: "Lần đầu gặp em bé Potato và tới giờ vẫn yêuu vô cùng", date: "Ngày 26/1/2026" },
+            { text: "Chuỗi 200 cực gắt", date: "Ngày 8/2/2026" },
+            { text: "Kỷ niệm 1 năm yêu nhau", date: "Ngày 16/2/2026" },
+            { text: "Đón Tết cùng bé iuu", date: "Ngày 20/2/2026" },
+            { text: "Săn skin đôi Bijan Violet với ẻm mà chỉ đoàn tụ", date: "Ngày 31/2/2026" },
+            { text: "Lúc này ẻm ôn thi ngập đầu luôn", date: "Ngày 30/4/2026" },
+            { text: "Hốt chuỗi 300", date: "Ngày 25/5/2026" },
+            { text: "Khúc này có điểm cái má ơi mừng sập nhà luôn", date: "Ngày 5/6/2026" },
+            { text: "Lần đầu call lọ tận 1 tiếng 6 phút 34 giây", date: "Ngày 19/6/2026" },
+            { text: "Đổi tên đôi lần thứ 3 nèe kiss với miss cute hết bài", date: "Ngày 25/7/2026" },
+            { text: "Ngày mai đón sinh nhật lần thứ 2 của em bé ròi nèe", date: "Ngày 24/8/2026" }
+        ];
+
+        let disableNutSound = false; 
+
+        function playClickSound() {
+            if (disableNutSound) return; 
+            const clickSound = document.getElementById('click-sound');
+            clickSound.currentTime = 0;
+            clickSound.play().catch(() => {});
+        }
+
+        function stopClickSound() {
+            const clickSound = document.getElementById('click-sound');
+            clickSound.pause();
+            clickSound.currentTime = 0;
+        }
+
+        function stopAllAudios() {
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(a => {
+                a.pause();
+                a.currentTime = 0;
+            });
+        }
+
+        function playInitialAudio() {
+            const bgMusic = document.getElementById('bg-music');
+            const voiceHello = document.getElementById('voice-hello');
+            
+            bgMusic.play().catch(() => {});
+            voiceHello.play().catch(() => {});
+        }
+
+        window.addEventListener('load', () => {
+            document.addEventListener('click', playInitialAudio, { once: true });
+        });
+
+        setTimeout(() => {
+            const voiceHello = document.getElementById('voice-hello');
+            voiceHello.pause();
+            voiceHello.currentTime = 0;
+
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('text-screen').style.display = 'block';
+
+            setTimeout(() => {
+                document.getElementById('text-screen').style.display = 'none';
+                document.getElementById('menu-screen').style.display = 'flex';
+            }, 3000);
+        }, 3000);
+
+        let clickCount = 0;
+        function handleExit() {
+            playClickSound();
+
+            clickCount++;
+            const container = document.getElementById('angry-container');
+            const pointer = document.getElementById('like-pointer');
+
+            if (clickCount >= 1) {
+                pointer.style.display = 'block';
+                let speed = Math.max(0.08, 0.8 - (clickCount - 1) * 0.12);
+                pointer.style.animationDuration = `${speed}s`;
+            }
+
+            if (clickCount === 1) {
+                container.innerHTML = `<div class="angry-wrapper"><img class="angry-img" src="meodam.gif"><p class="angry-text">Biết là đang bấm đi đâu ko đấyy</p></div>`;
+            } 
+            else if (clickCount === 2) {
+                container.innerHTML = `
+                    <div class="angry-wrapper">
+                        <span class="name-label">Thu Trang</span>
+                        <img class="angry-img" src="meoan.gif">
+                        <p class="angry-text">Bố thích bấm đấy cản được bố m à</p>
+                    </div>
+                    <div class="angry-wrapper">
+                        <span class="name-label">Tôi</span>
+                        <img class="angry-img" src="meoomdau.gif">
+                        <p id="text3" class="angry-text">KHÔNG CHO THOÁT! , Trời oiii tui khổ</p>
+                    </div>`;
+            } 
+          else if (clickCount === 3) {
+                container.innerHTML = `<div class="angry-wrapper"><img class="angry-img" src="meoluom.gif"><p id="text3" class="angry-text">Tôi chịu đủ r đấy nheee👹</p></div>`;
+            } 
+            else if (clickCount === 4) {
+                document.getElementById('text3').innerText = "Ôi trời ơi Thu Trang lì nàyy";
+            } 
+            else if (clickCount === 5) {
+                document.getElementById('text3').innerText = "Em hết iêu anh ròi 🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺";
+            } 
+            else if (clickCount === 6) {
+                document.getElementById('text3').innerText = "BẤM NỮA LÀ NỔ DỰNG TÓC EM ĐÓ!!";
+            }
+            else if (clickCount === 7) {
+                container.innerHTML = `<div class="angry-wrapper"><img id="imgExplode" class="angry-img" src="quy.jpg"></div>`;
+                const imgExplode = document.getElementById('imgExplode');
+                
+                imgExplode.classList.add('super-shake-gif');
+                
+                setTimeout(() => {
+                    const flash = document.getElementById('white-flash');
+                    flash.style.opacity = '1';
+
+                    document.getElementById('bg-music').pause();
+
+                    setTimeout(() => {
+                        stopClickSound();
+                        document.getElementById('birthday-screen').style.display = 'flex';
+                        const video = document.getElementById('birthday-video');
+                        video.play().catch(() => {});
+                        document.getElementById('birthday-music').play().catch(() => {});
+                        flash.style.opacity = '0';
+                    }, 600);
+
+                }, 800);
+            }
+        }
+
+        function triggerHeartStorm(durationMs, callback) {
+            const stormContainer = document.getElementById('heart-storm');
+            stormContainer.innerHTML = '';
+            stormContainer.style.display = 'block';
+
+            const hearts = ['💗', '💖', '💕', '❤️', '💓', '💗'];
+            const interval = setInterval(() => {
+                for(let i=0; i<5; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'storm-heart';
+                    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    heart.style.animationDuration = (Math.random() * 1.5 + 1.5) + 's';
+                    stormContainer.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3000);
+                }
+            }, 80);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                setTimeout(() => {
+                    stormContainer.style.display = 'none';
+                    if (callback) callback();
+                }, 1000);
+            }, durationMs);
+        }
+
+        function nextAction() {
+            disableNutSound = true; 
+            stopClickSound();
+
+            document.getElementById('menu-screen').style.display = 'none';
+            document.getElementById('quiz-intro-screen').style.display = 'flex';
+            
+            const introText = document.getElementById('quiz-intro-text');
+            introText.innerText = "Cuối cùng cũng chịu vô ròi đó";
+
+            triggerHeartStorm(3000, () => {
+                introText.innerText = "Để hỏi em vài câu hỏi về em nhaa";
+
+                setTimeout(() => {
+                    introText.innerText = "Làm sai là anh bó tay pà chã luôn đó 🙉";
+
+                    setTimeout(() => {
+                        introText.innerText = "";
+                        triggerHeartStorm(2500, () => {
+                            document.getElementById('start-btn').style.display = 'block';
+                        });
+                    }, 3000);
+
+                }, 3000);
+            });
+        }
+
+        function startQuiz() {
+            document.getElementById('start-btn').style.display = 'none';
+
+            const bgMusic = document.getElementById('bg-music');
+            const jumpscareSound = document.getElementById('jumpscare-sound');
+
+            bgMusic.pause();
+            jumpscareSound.currentTime = 0;
+            jumpscareSound.play().catch(() => {});
+
+            const jumpscare = document.getElementById('jumpscare-img');
+            jumpscare.style.display = 'block';
+            jumpscare.style.opacity = '1';
+
+            setTimeout(() => {
+                jumpscare.style.opacity = '0';
+                jumpscareSound.pause();
+                jumpscareSound.currentTime = 0;
+                bgMusic.play().catch(() => {});
+
+                setTimeout(() => {
+                    jumpscare.style.display = 'none';
+                    document.getElementById('quiz-intro-screen').style.display = 'none';
+                    document.getElementById('quiz-screen').style.display = 'flex';
+                    
+                    loadQuestion(1); 
+                }, 800);
+            }, 1000);
+        }
+
+        function loadQuestion(qIndex) {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+if (qIndex === 1) {
+                container.innerHTML = `
+                    <div class="quiz-title">Để tổng tèy hỏi Thu Trang và ẻm chọn yêu ai nhất</div>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 1)">Quần đùi biết đi <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 1)">độ mixi <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, true, 1)">Gia Minh <img src="dung.png" alt="dung"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 1)">minh luân sex <img src="sai.png" alt="sai"></button>
+                `;
+            } 
+            else if (qIndex === 2) {
+                container.innerHTML = `
+                    <div class="quiz-title">Sinh nhật năm tới em muốn bất ngờ là dì nèe em bé</div>
+                    <button class="btn answer-btn" onclick="selectQuestion2(this)">Gặp gỡ Gia Minh <img src="dung.png" alt="dung"></button>
+                    <button class="btn answer-btn" onclick="selectQuestion2(this)">Hộp quà siêu to khổng lồ <img src="dung.png" alt="dung"></button>
+                    <button class="btn answer-btn" onclick="selectQuestion2(this)">1 cái di đó mà em mong muốn <img src="dung.png" alt="dung"></button>
+                    <button class="btn answer-btn" onclick="selectQuestion2(this)">1 cái di đó mà a chx nghĩ ra... <img src="dung.png" alt="dung"></button>
+                `;
+            }
+            else if (qIndex === '2_msg') {
+                container.innerHTML = `
+                    <div class="quiz-title" style="font-size: 20px;">bí mật hết đó nhaa năm sau mới biếtt</div>
+                    <button class="btn" onclick="loadQuestion(3)">Go go lét go</button>
+                `;
+            }
+            else if (qIndex === 3) {
+                container.innerHTML = `
+                    <div class="quiz-title" style="cursor: pointer;" onclick="passQuestion3()" title="Bấm vào đây để qua màn">quà sinh nhật năm nay em thích hongg em phải dạaa thích nhìuu nhắm ạaa</div>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 3)">bố đéo thích <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 3)">mua thêm tivi cho bố <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 3)">móc hết tiền cho bố m <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 3)">chan bố m đê <img src="sai.png" alt="sai"></button>
+                `;
+            }
+            else if (qIndex === '3_msg') {
+                container.innerHTML = `
+                    <div class="quiz-title" style="font-size: 20px;">đóo phải bé ngoan bé dỏi như z anh mới thương mới yêuu đóo nhaa</div>
+                    <button class="btn" onclick="loadQuestion(4)">Go go lét go</button>
+                `;
+            }
+            else if (qIndex === 4) {
+                container.innerHTML = `
+                    <div class="quiz-title">Đoán xem trước khi qua tiết mục chính thì câu hỏi cuối là anh có yêu em khum<br><span style="color: red; font-size: 14px;">(câu hỏi cực khó ⚠️)</span></div>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 4)">anh chạ yêu em <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 4)">em chỉ là lốp <img src="sai.png" alt="sai"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, true, 4)">anh yêu em hơn tất cả yêu em hơn những j em có thể nghĩ anh yêu emm <img src="dung.png" alt="dung"></button>
+                    <button class="btn answer-btn" onclick="checkAnswer(this, false, 4)">vớ va vớ vẩn trai alime mà yêu á <img src="sai.png" alt="sai"></button>
+                `;
+            }
+            else if (qIndex === 'end_flow') {
+                startPreTimelineMessages();
+            }
+        }
+
+        function selectQuestion2(buttonElement) {
+            const allButtons = document.querySelectorAll('#quiz-container .answer-btn');
+            allButtons.forEach(btn => {
+                btn.style.backgroundColor = '#28a745';
+                btn.style.color = '#fff';
+                const img = btn.querySelector('img');
+                if (img) img.style.display = 'inline-block';
+            });
+
+            setTimeout(() => {
+                loadQuestion('2_msg');
+            }, 1200);
+        }
+
+        function passQuestion3() {
+            const allButtons = document.querySelectorAll('#quiz-container .answer-btn');
+            if (allButtons.length > 0) {
+                allButtons[0].style.backgroundColor = '#28a745';
+                allButtons[0].style.color = '#fff';
+                const img0 = allButtons[0].querySelector('img');
+                if(img0) { img0.src = "dung.png"; img0.style.display = 'inline-block'; }
+
+                for(let i=1; i<allButtons.length; i++) {
+                    allButtons[i].style.backgroundColor = '#dc3545';
+                    allButtons[i].style.color = '#fff';
+                    const img = allButtons[i].querySelector('img');
+                    if(img) { img.src = "sai.png"; img.style.display = 'inline-block'; }
+                }
+            }
+
+            setTimeout(() => {
+                loadQuestion('3_msg');
+            }, 1200);
+        }
+
+        function checkAnswer(buttonElement, isCorrect, currentQNum) {
+            const allButtons = document.querySelectorAll('#quiz-container .answer-btn');
+            
+            if (isCorrect) {
+                buttonElement.style.backgroundColor = '#28a745';
+                buttonElement.style.color = '#fff';
+                const imgIcon = buttonElement.querySelector('img');
+                if(imgIcon) imgIcon.style.display = 'inline-block';
+
+                allButtons.forEach(btn => {
+                    if (btn !== buttonElement) {
+                        btn.style.backgroundColor = '#dc3545';
+                        btn.style.color = '#fff';
+                        const otherImg = btn.querySelector('img');
+                        if(otherImg) {
+                            otherImg.src = "sai.png";
+                            otherImg.style.display = 'inline-block';
+                        }
+                    }
+                });
+
+                setTimeout(() => {
+                    if (currentQNum === 1) {
+                        const container = document.getElementById('quiz-container');
+                        container.innerHTML = `
+                            <div class="quiz-title" style="font-size: 20px;">Vượt qua 3 câu nx là thành thủ khoa đóoo</div>
+                            <button class="btn" onclick="loadQuestion(2)">Go go lét go</button>
+                        `;
+                    } else if (currentQNum === 3) {
+                        loadQuestion('3_msg');
+                    } else if (currentQNum === 4) {
+                        loadQuestion('end_flow');
+                    }
+                }, 1500);
+
+            } else {
+                const bgMusic = document.getElementById('bg-music');
+                const khokSound = document.getElementById('khok-sound');
+
+                bgMusic.pause();
+                khokSound.currentTime = 0;
+
+                const container = document.getElementById('quiz-container');
+                
+                if (currentQNum === 3) {
+                    container.innerHTML = `
+                        <div style="color: #d63384; font-size: 16px; font-weight: bold; line-height: 1.5; margin-bottom: 10px;">
+                            bố láo quá ai mà thưn đi chọn lại đi nhé nấm lùn của anh
+                        </div>
+                        <img src="kkk.png" style="width: 160px; height: auto; border-radius: 10px; margin-top: 10px;" alt="KKK">
+                    `;
+                } else if (currentQNum === 4) {
+                    container.innerHTML = `
+                        <div style="color: #d63384; font-size: 16px; font-weight: bold; line-height: 1.5; margin-bottom: 10px;">
+                            đó đó ha bụng Thu Trang suy ra cho bụng Gia Minh chọn tầm bậy tầm bạ
+                        </div>
+                        <img src="quai.png" style="width: 160px; height: auto; border-radius: 10px; margin-top: 10px;" alt="Quai">
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div style="color: #d63384; font-size: 16px; font-weight: bold; line-height: 1.5; margin-bottom: 10px;">
+                            em hết iêu anh ròi chứ giề🤜🏻🤛🏻👊🏻✊🏻
+                        </div>
+                        <img src="chuoi.png" style="width: 150px; height: auto; border-radius: 10px; margin-top: 10px;" alt="Khóc">
+                    `;
+                }
+
+                khokSound.play().catch(() => {});
+
+                const resetAudioAndReturn = () => {
+                    khokSound.pause();
+                    khokSound.currentTime = 0;
+                    bgMusic.play().catch(() => {});
+                    
+                    if (currentQNum === 3) {
+                        loadQuestion(3);
+                    } else if (currentQNum === 4) {
+                        loadQuestion(4);
+                    } else {
+                        loadQuestion(1);
+                    }
+                };
+
+                khokSound.onended = resetAudioAndReturn;
+                
+                setTimeout(() => {
+                    if (!khokSound.paused) {
+                        resetAudioAndReturn();
+                    }
+                }, 4000);
+            }
+        }
+
+        /* --- CHUỖI LỜI NHẮN TRƯỚC TIMELINE --- */
+        let introMsgStep = 0;
+        function startPreTimelineMessages() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('quiz-intro-screen').style.display = 'flex';
+            introMsgStep = 0;
+            advanceQuizIntroSequence();
+        }
+
+        function advanceQuizIntroSequence() {
+            introMsgStep++;
+            const txt = document.getElementById('quiz-intro-text');
+            const btn = document.getElementById('msg-next-btn');
+
+            if (introMsgStep === 1) {
+                txt.innerText = "đóo h mới trả lời đúng hết nèe bà mà làm sai câu nào là hiểu bà luôn";
+                btn.style.display = 'block';
+            } else if (introMsgStep === 2) {
+                txt.innerText = "sinh nhật năm nay a muốn bù đắp cho em sinh nhật lần trước anh đã bỏ lỡ với bé iu nèe";
+            } else if (introMsgStep === 3) {
+                txt.innerText = "cùng nhìn lại hành trình từ sinh nhật lần trước đến sinh nhật lần này cùng em nhé";
+            } else if (introMsgStep === 4) {
+                txt.innerText = "xem lại hành trình và kỉ niệm";
+                btn.innerText = "em vô xem điii dợ";
+                btn.onclick = goToTimeline;
+            }
+        }
+
+        function goToTimeline() {
+            document.getElementById('quiz-intro-screen').style.display = 'none';
+            
+            const bgMusic = document.getElementById('bg-music');
+            const timelineMusic = document.getElementById('timeline-music');
+            if (bgMusic) bgMusic.pause();
+            if (timelineMusic) {
+                timelineMusic.currentTime = 0;
+                timelineMusic.play().catch(() => {});
+            }
+
+            const flash = document.getElementById('white-flash');
+            flash.style.opacity = '1';
+
+            setTimeout(() => {
+                renderTimeline();
+                document.getElementById('timeline-screen').style.display = 'flex';
+                flash.style.opacity = '0';
+            }, 600);
+        }
+
+        function renderTimeline() {
+            const container = document.getElementById('timelineScroll');
+            container.innerHTML = '<div class="timeline-line"></div>';
+
+            timelineData.forEach((item) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'timeline-item';
+                itemDiv.innerHTML = `
+                    <div class="timeline-card">
+                        <p class="timeline-text">${item.text}</p>
+                        <p class="timeline-date">${item.date}</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                `;
+                container.appendChild(itemDiv);
+            });
+
+            const endDiv = document.createElement('div');
+            endDiv.className = 'timeline-item';
+            endDiv.style.flex = '0 0 220px';
+            endDiv.innerHTML = `
+                <button class="btn" style="background: #ff4081; color: #fff; font-size: 16px; box-shadow: 0 4px 15px rgba(255,64,129,0.4);" onclick="showSummary()">xem tổng kết ✨</button>
+            `;
+            container.appendChild(endDiv);
+
+            container.addEventListener('scroll', checkTimelineEnd);
+        }
+
+        function checkTimelineEnd() {
+            const container = document.getElementById('timelineScroll');
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+                const navGroup = document.querySelector('.nav-btn-group');
+                if (navGroup && !document.getElementById('btn-summary-nav')) {
+                    const btnSummary = document.createElement('button');
+                    btnSummary.id = 'btn-summary-nav';
+                    btnSummary.className = 'nav-btn';
+                    btnSummary.style.background = '#28a745';
+                    btnSummary.innerText = 'XEM TỔNG KẾT BLING BLING✨';
+                    btnSummary.onclick = showSummary;
+                    navGroup.appendChild(btnSummary);
+                }
+            }
+        }
+
+        function scrollTimeline(amount) {
+            document.getElementById('timelineScroll').scrollBy({ left: amount, behavior: 'smooth' });
+                  }
+      function showSummary() {
+            document.getElementById('timeline-screen').style.display = 'none';
+            const flash = document.getElementById('white-flash');
+            flash.style.opacity = '1';
+
+            setTimeout(() => {
+                document.getElementById('summary-screen').style.display = 'flex';
+                flash.style.opacity = '0';
+            }, 600);
+        }
+
+        /* --- CUỐI HÀNH TRÌNH -> MỞ HỘP QUÀ --- */
+        function goToPostSummaryText() {
+            document.getElementById('summary-screen').style.display = 'none';
+            document.getElementById('post-summary-screen').style.display = 'flex';
+        }
+
+        function openGiftPhase() {
+            document.getElementById('post-summary-screen').style.display = 'none';
+            document.getElementById('gift-stage-screen').style.display = 'flex';
+        }
+
+        function triggerOpenGift() {
+            document.getElementById('gift-opening-box').style.display = 'none';
+            document.getElementById('gift-video-box').style.display = 'block';
+
+            // Dừng toàn bộ các âm thanh nền khác
+            stopAllAudios();
+
+            const giftVideo = document.getElementById('gift-video');
+            const voiceGift = document.getElementById('voice-gift');
+
+            giftVideo.play().catch(() => {});
+            voiceGift.currentTime = 0;
+            voiceGift.play().catch(() => {});
+
+            // Sau khi Voice phát xong
+            voiceGift.onended = function() {
+                // Biến mất video/voice, hiện Bánh Kem
+                document.getElementById('gift-video-box').style.display = 'none';
+                giftVideo.pause();
+
+                document.getElementById('gift-cake-box').style.display = 'flex';
+
+                // Bật hiệu ứng Pháo hoa & Phát nhạc snvv.mp3
+                startFireworks();
+                const snvvMusic = document.getElementById('snvv-music');
+                snvvMusic.currentTime = 0;
+                snvvMusic.play().catch(() => {});
+            };
+        }
+
+        /* --- MÀN HÌNH DEADLINE & LỜI CHÚC KẾT THÚC --- */
+        let finalStep = 0;
+        function goToDeadlineScreen() {
+            stopFireworks();
+            document.getElementById('gift-stage-screen').style.display = 'none';
+            document.getElementById('final-message-screen').style.display = 'flex';
+            finalStep = 0;
+            advanceFinalSequence();
+        }
+
+        function advanceFinalSequence() {
+            finalStep++;
+            const txt = document.getElementById('final-card-text');
+            const btn = document.getElementById('final-card-btn');
+
+            if (finalStep === 1) {
+                txt.innerText = "Saoooo em thấy thành quả chạy deadline sống chết của anh thế nàoo";
+                btn.innerText = "Tiếp tục ✨";
+                btn.style.display = 'block';
+            } else if (finalStep === 2) {
+                txt.innerText = "Anh sẽ vẫn đồng hành và yêu thương em càng ngày càng nhiều hơn tóm lại chúc em sinh nhật thật ô mai gót và thật duiii nhaa thế giới của anh ❤️";
+                btn.innerText = "Mở ra kỉ niệm mới sẽ tiếp tục trong tương lai";
+            } else if (finalStep === 3) {
+                // Màn hình đen dần và tối hoàn toàn
+                const blackOverlay = document.getElementById('black-overlay');
+                blackOverlay.style.opacity = '1';
+                stopAllAudios();
+            }
+        }
+
+        function playBirthdayVoice() {
+            const birthdayMusic = document.getElementById('birthday-music');
+            const hpbdVoice = document.getElementById('voice-hpbd');
+
+            birthdayMusic.pause();
+            hpbdVoice.currentTime = 0;
+            hpbdVoice.play().catch(() => {});
+        }
+
+        /* --- EFFECT PHÁO HOA CANVAS --- */
+        let fireworksInterval = null;
+        function startFireworks() {
+            const canvas = document.getElementById('fireworks-canvas');
+            canvas.style.display = 'block';
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particles = [];
+
+            function createFirework() {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * (canvas.height * 0.5);
+                const colors = ['#ff4081', '#ffd700', '#00e676', '#00b0ff', '#ff3d00', '#ffffff'];
+                for (let i = 0; i < 40; i++) {
+                    particles.push({
+                        x: x, y: y,
+                        angle: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 5 + 2,
+                        radius: Math.random() * 3 + 1,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        alpha: 1,
+                        decay: Math.random() * 0.02 + 0.015
+                    });
+                }
+            }
+
+            fireworksInterval = setInterval(createFirework, 400);
+
+            function loop() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    let p = particles[i];
+                    p.x += Math.cos(p.angle) * p.speed;
+                    p.y += Math.sin(p.angle) * p.speed + 0.8; // gravity
+                    p.alpha -= p.decay;
+
+                    if (p.alpha <= 0) {
+                        particles.splice(i, 1);
+                    } else {
+                        ctx.save();
+                        ctx.globalAlpha = p.alpha;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = p.color;
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                }
+                if (canvas.style.display === 'block') {
+                    requestAnimationFrame(loop);
+                }
+            }
+            loop();
+        }
+
+        function stopFireworks() {
+            const canvas = document.getElementById('fireworks-canvas');
+            canvas.style.display = 'none';
+            if (fireworksInterval) clearInterval(fireworksInterval);
+        }
+      // Tìm đoạn code phát voice cũ của bạn và gắn sự kiện onended:
+const voiceAudio = document.getElementById('id_audio_voice_cu'); // Thay đúng ID voice cũ
+
+voiceAudio.onended = function() {
+  // 1. Ẩn màn hình pháo hoa/nội dung cũ đi (nếu có)
+  // document.getElementById('man_hinh_cu').style.display = 'none';
+
+  // 2. Chuyển background sang màu hồng
+  document.body.classList.add('screen-2');
+
+  // 3. Hiện màn hình mới chứa ảnh
+  document.getElementById('screen2').style.display = 'block';
+
+  // 4. Phát nhạc happy.mp3
+  const happyMusic = document.getElementById('happy-music');
+  happyMusic.play();
+
+  // 5. Bắt đầu thả trái tim bay
+  setInterval(createHeart, 300);
+};
+
+// Hàm tạo trái tim bay
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  
+  const size = Math.random() * 20 + 15;
+  heart.style.fontSize = size + 'px';
+  
+  const duration = Math.random() * 4 + 4;
+  heart.style.animationDuration = duration + 's';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => { heart.remove(); }, duration * 1000);
+}
+      // Lấy các phần tử giao diện
+const snvvMusic = document.getElementById('snvv-music');
+const screenCake = document.getElementById('screen-cake');
+const screenMsg1 = document.getElementById('screen-msg1');
+const screenMsg2 = document.getElementById('screen-msg2');
+
+const btnStep1 = document.getElementById('btn-step1');
+const btnStep2 = document.getElementById('btn-step2');
+
+// 1. TÌM FILE VOICE CŨ CỦA BẠN VÀ GẮN SỰ KIỆN KHI PHÁT XONG:
+// (Thay 'id_the_audio_voice_cu' bằng ID thẻ <audio> voice cũ trong index của bạn)
+const oldVoiceAudio = document.querySelector('audio'); 
+
+if (oldVoiceAudio) {
+  oldVoiceAudio.onended = function() {
+    // Ẩn nội dung màn hình cũ (nếu có)
+    // Đổi nền sang màu hồng
+    document.body.style.backgroundColor = '#ffb6c1';
+    
+    // Hiện màn hình bánh kem
+    screenCake.classList.remove('hidden-screen');
+    
+    // Phát nhạc snvv.mp3 & tạo hiệu ứng trái tim
+    snvvMusic.play().catch(e => console.log("Lỗi tự động phát nhạc:", e));
+    setInterval(createHeart, 350);
+  };
+}
+
+// 2. Bấm nút 1 -> Hiện dòng chữ deadline
+btnStep1.onclick = function() {
+  screenCake.classList.add('hidden-screen');
+  screenMsg1.classList.remove('hidden-screen');
+};
+
+// 3. Bấm nút 2 -> Hiện lời chúc & Tắt màn hình dần về màu đen
+btnStep2.onclick = function() {
+  screenMsg1.classList.add('hidden-screen');
+  screenMsg2.classList.remove('hidden-screen');
+
+  // Sau 6 giây tự động mờ dần và chuyển nền hoàn toàn về màu đen
+  setTimeout(() => {
+    document.body.style.backgroundColor = '#000000';
+    screenMsg2.style.transition = 'opacity 2.5s ease';
+    screenMsg2.style.opacity = '0';
+  }, 6000);
+};
+
+// Hàm tạo trái tim bay ngẫu nhiên
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart-item');
+  heart.innerHTML = '❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+  heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+    </script>
+  <!-- Thêm đoạn này vào ngay sau thẻ <body> -->
+<audio id="happy-music" src="happy.mp3" preload="auto" loop></audio>
+
+<!-- Thẻ chứa màn hình 2 (ban đầu ẩn đi bằng style="display:none;") -->
+<div id="screen2" style="display: none;">
+  <img src="Bk.png" alt="Happy Image" class="center-img">
+</div>
+</body>
+</html>
